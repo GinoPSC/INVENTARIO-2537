@@ -43,7 +43,6 @@
 	function save_sql(){
 		$tran_coment = $_SESSION["comentario"];
 		$tran_class_id = $_SESSION["clase_id"];
-		$tran_class_id--;
 		
 		for ($y = 0;$y<$_SESSION["prod_count"];$y++){
 			$grup_prod_id[$y] = $_SESSION["prod_id"][$y];

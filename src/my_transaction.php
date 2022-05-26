@@ -69,8 +69,8 @@
 			);
 			$param_coment = $tran_coment;
 			$param_class = $tran_class_id;
-			$param_tran_LID = 0;
-			$param_tran_UID = 0;
+			$param_tran_LID = 1;
+			$param_tran_UID = 1;
 			$tran_ID = null;
 			
 			if(mysqli_stmt_execute($stmt)){

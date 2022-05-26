@@ -69,7 +69,7 @@ CREATE TABLE Grupo_de_productos (
 
 #---------------------------- Seed ---------------------------------
 
-#Locales
+#Locales de ventas
 INSERT INTO Local_de_ventas VALUES
 (null, "Local Centro", "Region, Pais", 12345678);
 
@@ -89,3 +89,14 @@ INSERT INTO Clase_de_transaccion VALUES
 (null, "Venta"),
 (null, "Compra"),
 (null, "Retiro");
+
+#---------------------------- Datos de prueba ---------------------------------
+
+#Productos
+INSERT INTO Producto VALUES
+(null, "Bicicleta BMX", "Ejercicio y diversión fuera de casa", 1000000,0,1,1),
+(null, "Bebida Coca-Cola", "Refrescante sabor para toda la familia", 1000,0,1,1);
+
+#Usuarios
+INSERT INTO Usuario VALUES
+(null, "user", "admin", "user@gmail.com", 1,1);

@@ -67,7 +67,7 @@ CREATE TABLE Grupo_de_productos (
 	FOREIGN KEY (Tran_ID) REFERENCES Transaccion(Tran_ID)
 );
 
-#----------------------------Datos de prueba---------------------------------
+#---------------------------- Seed ---------------------------------
 
 #Locales
 INSERT INTO Local_de_ventas VALUES
@@ -141,6 +141,8 @@ INSERT INTO Producto VALUES
 
 select * from Producto;
 #delete from Producto;
+
+#---------------------------- Datos de prueba ---------------------------------
 
 #Empleados
 

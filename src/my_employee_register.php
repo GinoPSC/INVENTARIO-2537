@@ -1,5 +1,13 @@
 <?php
 	require_once "my_config.php";
+	
+	//Redireccionador
+	session_start();
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+		header("location: my_login.php");
+		exit;
+	}
+	
 	$Nombre = $E_Mail = $Clave = $confirm_password = "";
 	$username_err = $email_err = $password_err = $confirm_password_err = "";
 
@@ -72,22 +80,10 @@
 				$param_username = $Nombre;
 				$param_email = $E_Mail;
 				$param_password = password_hash($Clave, PASSWORD_DEFAULT);
-				$param_RID = 1;
+				$param_RID = 2;
 				$param_LID = 1;
 				if(mysqli_stmt_execute($stmt)){
 					//Redireccionador
-					$CompL = 0;
-					$sql = "SELECT * FROM Local_de_ventas";
-					if($result = mysqli_query($link, $sql)){
-						$r_num = mysqli_num_rows($result);
-						if ($r_num > 0) {
-							while($row = $result->fetch_assoc()) {
-								$CompL++;
-							}
-						}
-					}
-					$sql = "INSERT INTO Local_de_ventas (Nombre, Direccion, Telefono) VALUES (Local_Test_".$CompL.", Dir_Test, 12345678)";
-					$link->query($sql);
 					header("location: my_login.php");
 				}else{
 					echo "Ha ocurrido un error, porfavor intente mas tarde";
@@ -137,20 +133,20 @@
 		<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 			<header class="mb-auto">
 				<div>
-					<h3 class="float-md-start mb-0">INVENTARIO #2537</h3>
+					<h3 class="float-md-start mb-0">Hola <b><?php echo htmlspecialchars($_SESSION["Nombre"]); ?></b></h3>
 					<nav class="nav nav-masthead justify-content-center float-md-end">
-						<a class="nav-link" href="my_start.php">Inicio</a>
-						<a class="nav-link" href="#">Explora</a>
-						<a class="nav-link" href="#">Contacto</a>
-						<a class="nav-link active" aria-current="page" href="#">Sesion</a>
+						<a class="nav-link" href="my_welcome.php">Inicio</a>
+						<a class="nav-link active" href="#">Empleados</a>
+						<a class="nav-link" href="my_welcome_B.php">Productos</a>
+						<a class="nav-link" href="my_logout.php">Cerrar</a>
 					</nav>
 				</div>
 			</header>
 
 			<main class="px-3">
 				<div class="wrapper">
-					<h2>Creacion de Cuenta</h2>
-					<p>Indique los datos del administrador</p>
+					<h2>Nuevo empleado</h2>
+					<p>Indique los datos del usuario nuevo</p>
 					<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 						<div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
 							<label>Nombre</label>
@@ -169,17 +165,19 @@
 							<input type="Clave" name="Clave" class="form-control" value="<?php echo $Clave; ?>">
 							<span class="help-block"><?php echo $password_err; ?></span>
 						</div>
+						
 						<div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
 							<label>Reingrese Contraseña</label>
 							<input type="Clave" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
 							<span class="help-block"><?php echo $confirm_password_err; ?></span>
 						</div><br>
+						
 						<div class="form-group">
 							<input type="submit" class="btn btn-primary" value="Crear Cuenta">
-						</div><br>
-						<p>¿Ya tienes una cuenta? <a href="my_login.php">Inicia sesion aqui</a></p>
+							<a href="my_welcome_A.php" class="btn btn-danger">Cancelar</a>
+						</div>
 					</form>
-				</div>  
+				</div>
 			</main>
 
 			<footer class="mt-auto text-white-50">

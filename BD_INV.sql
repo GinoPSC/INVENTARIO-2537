@@ -67,7 +67,7 @@ CREATE TABLE Grupo_de_productos (
 	FOREIGN KEY (Tran_ID) REFERENCES Transaccion(Tran_ID)
 );
 
-#---------------------------- Seed ---------------------------------
+#---------------------------- Semilla base ---------------------------------
 
 #Locales de ventas
 INSERT INTO Local_de_ventas VALUES

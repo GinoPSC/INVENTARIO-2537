@@ -70,22 +70,22 @@ CREATE TABLE Grupo_de_productos (
 #---------------------------- Seed ---------------------------------
 
 #Locales
-INSERT INTO Local_de_ventas (Nombre, Direccion, Telefono) VALUES
-("Local Centro", "Santiago, Chile", 12345678);
+INSERT INTO Local_de_ventas VALUES
+(null, "Local Centro", "Region, Pais", 12345678);
 
 #Roles de usuario
 INSERT INTO Rol_de_usuario VALUES
-(null,"Administrador"),
-(null,"Empleado");
+(null, "Administrador"),
+(null, "Empleado");
 
 #Tipos de productos
 INSERT INTO Tipo_de_producto VALUES
-(null,"Comestible"),
-(null,"Bebestible"),
-(null,"Electrodomestico");
+(null, "Comestible"),
+(null, "Bebestible"),
+(null, "Electrodomestico");
 
 #Clases de transacciones
 INSERT INTO Clase_de_transaccion VALUES
-(null,"Venta"),
-(null,"Compra"),
-(null,"Retiro");
+(null, "Venta"),
+(null, "Compra"),
+(null, "Retiro");

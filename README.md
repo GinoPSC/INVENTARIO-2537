@@ -1,6 +1,7 @@
 # INV_Project
  Proyecto TI UNAP
- Programado en PHP, Bootstrap, Javascript y Ajax. 
+ Lenguajes de programacion utilizados: PHP, Bootstrap, Javascript y Ajax.
+ Bases de datos utilizada: MySQL.
 
 Descripcion:
  Modelo de inventario clasico, con opciones de:

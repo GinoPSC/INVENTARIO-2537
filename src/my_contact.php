@@ -73,7 +73,7 @@
 							<span class="help-block"></span>
 						</div><br>
 						<div class="form-group">
-							<input type="submit" class="btn btn-primary" value="Iniciar Sesion">
+							<input type="submit" class="btn btn-primary" value="Enviar">
 						</div><br>
 					</form>
 				</div>

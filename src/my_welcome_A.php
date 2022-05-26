@@ -93,7 +93,7 @@
 				</div>
 				
 				<p>
-					<a href="my_transaction" class="btn btn-light">Realizar Transaccion</a>
+					<a href="my_transaction.php" class="btn btn-light">Realizar Transaccion</a>
 					<a href="my_reset_password.php" class="btn btn-warning">Restablecer contraseña</a>
 					<a href="my_logout.php" class="btn btn-danger">Cerrar sesion</a>
 				</p>

@@ -52,12 +52,7 @@
 		}
 		
 		require_once "my_config.php";
-		$sql = "INSERT INTO transaccion (
-			Comentario,
-			Clase_ID,
-			Loc_ID,
-			Usua_ID
-		) VALUES (?, ?, ?, ?)";
+		$sql = "INSERT INTO transaccion VALUES (?, ?, ?, ?)";
 		if($stmt = mysqli_prepare($link, $sql)){
 			mysqli_stmt_bind_param(
 				$stmt, 

@@ -103,7 +103,7 @@
 				$param_prod_prce = $product_price;
 				$param_prod_cant = 0;
 				$param_prod_LID = 1;
-				$param_prod_TID = 0;
+				$param_prod_TID = 1;
 				
 				if(mysqli_stmt_execute($stmt)){
 					//Redireccionador

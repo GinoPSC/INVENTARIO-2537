@@ -1,4 +1,4 @@
-<?php	
+<?php
 	//Redireccionador
 	session_start();
 	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
@@ -103,13 +103,15 @@
 						$param_grup_TID = $tran_ID;
 						$param_precio = $grup_precio[$m];
 						$param_cantidad = $grup_cantidad[$m];
-						$param_grup_PID--;	
-						mysqli_stmt_execute($stmt);
+						if(!mysqli_stmt_execute($stmt)){
+							echo "Ha ocurrido un error, porfavor intente mas tarde <br>";
+							echo "DB ERROR: ".$link->error;
+						}
 					}
-					//Redireccionador
-					$_SESSION["step_num"] = 0;
-					header("location: my_welcome.php");
 				}
+				//Redireccionador
+				header("location: my_welcome.php");
+				$_SESSION["step_num"] = 0;
 			}else{
 				echo "Ha ocurrido un error, porfavor intente mas tarde <br>";
 				echo "DB ERROR: ".$link->error;

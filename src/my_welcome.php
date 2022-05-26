@@ -130,7 +130,7 @@
 								$r_num = mysqli_num_rows($result);
 								if ($r_num > 0) {
 									while($row = $result->fetch_assoc()) {
-										if($cl_id[$i] == 0){
+										if($cl_id[$i] == 1){
 											$gr_pr[$i] += $row["Precio"]*$row["Cantidad"];
 										}else{
 											$gr_pr[$i] -= $row["Precio"]*$row["Cantidad"];

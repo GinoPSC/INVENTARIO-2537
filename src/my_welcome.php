@@ -102,7 +102,7 @@
 					];
 					
 					var ejeX = [
-						'Test'
+						'Inicio'
 					];
 					
 					<?php
@@ -153,8 +153,10 @@
 							}
 						}
 						
+						$total = 0;
 						for ($k = 0;$k<$tr_cnt;$k++){
-							echo "ejeY.push(". $gr_pr[$k] .");";
+							$total += $gr_pr[$k];
+							echo "ejeY.push(". $total .");";
 							echo "ejeX.push('". $TT[$k] ."');";
 						}
 					?>

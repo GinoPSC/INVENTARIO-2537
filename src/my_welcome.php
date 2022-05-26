@@ -144,9 +144,9 @@
 						//$transacciones[0],$transacciones[1],$gr_pr;
 						$TT = [];
 						for ($j = 0;$j<$tr_cnt;$j++){
-							if($cl_id[$j] == 0){
+							if($cl_id[$j] == 1){
 								$TT[$j] = "Venta ".$tr_id[$j];
-							}else if($cl_id[$j] == 1){
+							}else if($cl_id[$j] == 2){
 								$TT[$j] = "Compra ".$tr_id[$j];
 							}else{
 								$TT[$j] = "Retiro ".$tr_id[$j];

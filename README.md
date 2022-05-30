@@ -1,6 +1,6 @@
 # INV_Project
  Proyecto TI UNAP
- Lenguajes de programacion utilizados: PHP, Bootstrap, Javascript y Ajax.
+ Lenguajes de programacion utilizados: PHP, Bootstrap, Javascript.
  Bases de datos utilizada: MySQL.
 
 Descripcion:
